@@ -1,6 +1,6 @@
-# University of Colorado Advancement Unit Theme platform for unit site
+# University of Colorado Theme platform for unit site
 
-This repository contains all configuration and code customization of the CU Advancement theme platform.
+This repository contains all configuration and code customization of the CU theme platform.
 
 ## Master Branch and Commits
 
@@ -21,7 +21,7 @@ The theme is manage via composer inside the Drupal composer.json file.
 ],
 
 "require": {
-"cu/cua_theme": "^2.0",
+"cu/cu_theme": "^1.0",
 }
 
 # Theme issues are assigned and handle via the Github Issue Q.
