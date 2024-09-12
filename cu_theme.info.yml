@@ -1,8 +1,8 @@
 name: CU Theme
 type: theme
-description: 'CU Advancement | CU Foundation'
+description: 'CU Thehe
 core_version_requirement: ^10
-version: '2.0.0'
+version: '1.0.0'
 project: 'drupal'
 base theme: bootstrap_barrio
 
@@ -37,11 +37,11 @@ regions:
   placeholder: 'Placeholder'
 
 libraries:
-  - cua_theme/global-styling
-  - cua_theme/alert
-  - cua_theme/banner
-  - cua_theme/call-to-action
-  - cua_theme/counter
-  - cua_theme/half-and-half
-  - cua_theme/spacer
-  - cua_theme/video
+  - cu_theme/global-styling
+  - cu_theme/alert
+  - cu_theme/banner
+  - cu_theme/call-to-action
+  - cu_theme/counter
+  - cu_theme/half-and-half
+  - cu_theme/spacer
+  - cu_theme/video

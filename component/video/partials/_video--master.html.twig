@@ -1,7 +1,7 @@
 {# Video Containers #}
 
 {# Import macros #}
-{% import '@cua_theme/component/macros/card_basic_title.html.twig' as titleMacros %}
+{% import '@cu_theme/component/macros/card_basic_title.html.twig' as titleMacros %}
 
 {# Content #}
 {% if provider|default(false) %}
@@ -14,7 +14,7 @@
 
     {# Render video #}
     <div class="video-container g-0 m-0 p-0 position-relative">
-        {% include '@cua_theme/component/video/partials/_video--' ~ provider|lower ~ '.html.twig' ignore missing %}
+        {% include '@cu_theme/component/video/partials/_video--' ~ provider|lower ~ '.html.twig' ignore missing %}
     </div>
 
 {% else %}

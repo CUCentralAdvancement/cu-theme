@@ -2,7 +2,7 @@ layout_fivecol_section:
   label: 'Five column'
   path: layouts/fivecol_section
   template: layout--fivecol-section
-  library: cua_theme/fivecol_section
+  library: cu_theme/fivecol_section
   category: 'Columns: 5'
   default_region: first
   icon_map:

@@ -1,9 +1,9 @@
 {
-    "name": "cu/cua_theme",
+    "name": "cu/cu_theme",
     "description": "The CU 2.x theme",
     "type": "drupal-theme",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://github.com/CUCentralAdvancement/cua-theme",
+    "homepage": "https://github.com/CUCentralAdvancement/cu-theme",
     "authors": [
         {
             "name": "Bradly Waye",

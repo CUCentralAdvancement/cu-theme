@@ -15,12 +15,12 @@
 #}
 
 {# Import macros #}
-{% import '@cua_theme/component/macros/card_title.html.twig' as titleMacros %}
-{% import '@cua_theme/component/macros/card_body.html.twig' as bodyMacros %}
-{% import '@cua_theme/component/macros/card_footer.html.twig' as cardFooterMacros %}
+{% import '@cu_theme/component/macros/card_title.html.twig' as titleMacros %}
+{% import '@cu_theme/component/macros/card_body.html.twig' as bodyMacros %}
+{% import '@cu_theme/component/macros/card_footer.html.twig' as cardFooterMacros %}
 
 {# Attach the library #}
-{{ attach_library('cua_theme/video') }}
+{{ attach_library('cu_theme/video') }}
 
 {# Define the main block classes #}
 {% set video_classes = [
@@ -41,7 +41,7 @@
 <div{{ attributes|without('id').setAttribute('id', unique_id).addClass(video_classes) }}>
 
     {# Include Video component #}
-    {% include '@cua_theme/component/video/partials/_video--master.html.twig' %}
+    {% include '@cu_theme/component/video/partials/_video--master.html.twig' %}
 
     {# Desktop component #}
     {% if label or body %}
