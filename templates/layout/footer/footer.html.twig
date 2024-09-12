@@ -1,0 +1,139 @@
+{#
+/**
+* @file
+* Template for the Footer component.
+*
+* Bootstrap Documentation
+* https://getbootstrap.com/docs/5.3
+*
+* Full List Utility Classes
+* https://github.com/twbs/bootstrap/blob/v5.3.0/dist/css/bootstrap.css#L5360
+*
+* Available fields located in:
+* - cua_theme.theme
+*/
+#}
+{# Render content #}
+<footer class="site-footer mt-auto">
+    {# Site Footer Top Section #}
+    <div id="site-footer-top" class="container pt-3">
+        {# Check if any footer regions are present #}
+        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth or page.footer_fifth %}
+            <div class="row g-0">
+
+                {# Footer Region top #}
+                {% if page.footer_top %}
+                    <div class="col-sm-12 footer-top d-flex align-items-center justify-content-center">
+                        {{ page.footer_top }}
+                    </div>
+                {% endif %}
+
+                {# Footer Region 1 #}
+                {% if page.footer_first %}
+                    <div class="col-md-3 col-sm-6 footer-first mt-2 px-2">
+                        {{ page.footer_first }}
+                    </div>
+                {% endif %}
+
+                {# Footer Region 2 #}
+                {% if page.footer_second %}
+                    <div class="col-md-3 col-sm-6 footer-second px-2">
+                        {{ page.footer_second }}
+                    </div>
+                {% endif %}
+
+                {# Footer Region 3 #}
+                {% if page.footer_third %}
+                    <div class="col-md-3 col-sm-6 footer-third px-2">
+                        {{ page.footer_third }}
+                    </div>
+                {% endif %}
+
+                {# Footer Region 4 #}
+                {% if page.footer_fourth %}
+                    <div class="col-md-3 col-sm-6 footer-fourth px-2">
+                        {{ page.footer_fourth }}
+                    </div>
+                {% endif %}
+
+                {# Footer Region 5 #}
+                {% if page.footer_fifth %}
+                    <div class="col make-a-gift footer-fifth g-0 my-2">
+                        {{ page.footer_fifth }}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+
+    {# Site Footer Bottom Section #}
+    <div id="site-footer-bottom" class="container-fluid bg-pure-black px-5 pb-2">
+        <div class="row">
+
+            {# CU Logo #}
+            <div class="col-sm-12 mt-4 mb-3 d-flex align-items-center justify-content-center cu-logo-section">
+                <a href="https://www.cu.edu/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="footer-site-branding__logo">
+                    <picture>
+                        <source media="(max-width: 499px)"
+                                srcset="{{ base_path ~ directory ~ '/images/cua-logo-white.svg' }}"
+                                width=250 height=auto/>
+                        <source media="(min-width: 500px)"
+                                srcset="{{ base_path ~ directory ~ '/images/cua-logo-white.svg' }}"
+                                width=500 height=auto/>
+                        <img src="{{ base_path ~ directory ~ '/images/cua-logo-white.svg' }}"
+                             alt="{{ 'University of Colorado Logo'|t }}"
+                             width=500 height=auto/>
+                    </picture>
+                </a>
+            </div>
+
+            {# Footer Region 6 #}
+            {% if page.footer_sixth %}
+                <div class="col-sm-12 d-flex align-items-center justify-content-center">
+                    {{ page.footer_sixth }}
+                </div>
+            {% endif %}
+
+            {# Copyright/Regents Information #}
+            <div class="copyright col-sm-12 border-top border-secondary d-flex align-items-center justify-content-center">
+                <p class="mt-2 mb-3 strong text-light"
+                   aria-label="{{ 'Copyright and University of Colorado Regents website'|t }}">
+                    {# Copyright  #}
+                    {{ '©'|t }} {{ 'now' | date('Y') }}
+                    {# Link to the University of Colorado Regents website #}
+                    <a href="https://regents.cu.edu" rel="noopener"
+                       target="_blank"
+                       class="link-light link-underline-opacity-0 px-2"
+                       aria-label="{{ 'Visit the University of Colorado Regents website'|t }}">{{ 'Regents of the University of Colorado'|t }}</a>
+
+                    {# Check if user is logged in #}
+                    {% if not logged_in %}
+                        {# Admin Login #}
+                        <span class="admin-login">
+                            <a href="/saml_login" rel="noopener"
+                               class="link-light link-underline-opacity-0 px-2"
+                               aria-label="{{ 'Login'|t }}">
+                                <i class="px-2 fas fa-sign-in-alt"></i>{{ 'Login'|t }}
+                            </a>
+                        </span>
+                    {% else %}
+                        {# Admin Logout #}
+                        <span class="user-logged-in">
+                            <a href="/user/logout" rel="noopener"
+                               class="link-light link-underline-opacity-0 px-2"
+                               aria-label="{{ 'Logout'|t }}">
+                                <i class="px-2 fas fa-sign-in-alt"></i>{{ 'Logout'|t }}
+                            </a>
+                        </span>
+                    {% endif %}
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>

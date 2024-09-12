@@ -1,0 +1,659 @@
+/* card styling */
+.card {
+  border-radius: 0 !important;
+  --bs-card-bg: transparent;
+  --bs-card-border-color: transparent;
+  --bs-card-border-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+
+.card-body {
+  flex: 1;
+  padding: 0
+}
+
+.card .invisible {
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+  height: 1px !important
+}
+
+.card h3, .card .h3, .card h3 a, .card .h3 a {
+  font-size: 1.75rem;
+  margin: 0
+}
+
+.card h3.justify-content-end,
+.card .justify-content-end p {
+  text-align: right
+}
+
+.card h3.justify-content-center,
+.card .justify-content-center p {
+  text-align: center
+}
+
+.card h3.justify-content-start,
+.card .justify-content-start p {
+  text-align: left
+}
+
+.card .text-cu-bg-gold > * {
+  color: var(--cua-black)
+}
+
+.cu-bg-gold, .card.cu-bg-gold {
+  background: var(--cua-gold)
+}
+
+.cu-bd-gold, .card.cu-bd-gold {
+  border: 2px solid var(--cua-gold)
+}
+
+/* card header */
+
+.card-header {
+  background-color: transparent;
+  border-bottom: none;
+  color: transparent;
+  margin-bottom: 0;
+  padding: 0
+}
+
+.card-header.add-padding, .add-padding {
+  padding: 1.5rem !important
+}
+
+/* links */
+.card-link {
+  text-align: left;
+  max-width: max-content !important
+}
+
+.card-link + .card-link {
+  margin-left: 0
+}
+
+.card .btn {
+  border-radius: 0 !important;
+  font-size: .95rem;
+  font-weight: var(--font-weight-medium);
+  padding: 0.75rem 1.25rem !important;
+  width: fit-content;
+  min-width: 16rem
+}
+
+.card-link.btn.nobtn-cu-bg-white,
+.card-link.btn.nobtn-cu-bg-black,
+.card-link.btn.nobtn-cu-bg-gold,
+.card-link.btn.nobtn-cu-bg-light-grey {
+  padding: 0 .5rem !important
+}
+
+.card-link.btn.nobtn-cu-bg-white:hover,
+.card-link.btn.nobtn-cu-bg-black:hover,
+.card-link.btn.nobtn-cu-bg-gold:hover,
+.card-link.btn.nobtn-cu-bg-light-grey:hover {
+  text-decoration: underline !important
+}
+
+/* card footer */
+
+.card-footer {
+  background-color: transparent;
+  border-top: none;
+  padding: 0;
+  width: 100%
+}
+
+.card-footer.justify-content-start,
+.card-footer.justify-content-center,
+.card-footer.justify-content-end {
+  display: flex
+}
+
+.card-footer.multiple-links {
+  display: flex;
+  flex-direction: column
+}
+
+.card-footer .btn.btn-cu-bg-gold {
+  background: var(--cua-gold);
+  border: 2px solid var(--cua-gold);
+  color: var(--cua-black);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-gold:hover {
+  color: var(--cua-gold) !important
+}
+
+.card-footer .btn.btn-cu-bg-gold::before {
+  background: var(--cua-black);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold {
+  background: inherit;
+  border: 2px solid var(--cua-gold-hover);
+  color: var(--cua-gold-hover);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold::before {
+  background: var(--cua-gold);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold:hover::before,
+.card-footer .btn.btn-cu-bg-gold:hover::before {
+  width: 100%
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold:hover,
+.card-footer .btn.btn-cu-bg-gold:hover {
+  color: var(--cua-black);
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-gold-hover {
+  background: var(--cua-gold-hover);
+  border: 2px solid var(--cua-gold-hover);
+  color: var(--cua-white);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-gold-hover:hover {
+  color: var(--cua-gold-hover) !important
+}
+
+.card-footer .btn.btn-cu-bg-gold-hover::before {
+  background: var(--cua-black);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold-hover {
+  background: inherit;
+  border: 2px solid var(--cua-gold-hover);
+  color: var(--cua-gold-hover);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold-hover::before {
+  background: var(--cua-gold-hover);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold-hover:hover::before,
+.card-footer .btn.btn-cu-bg-gold-hover:hover::before {
+  width: 100%
+}
+
+.card-footer .btn.outline-btn-cu-bg-gold-hover:hover,
+.card-footer .btn.btn-cu-bg-gold-hover:hover {
+  color: var(--cua-black);
+  z-index: 1
+}
+
+.cu-bg-black .card-footer .btn.outline-btn-cu-bg-gold {
+  border: 2px solid var(--cua-gold);
+  color: var(--cua-gold)
+}
+
+.card-footer .btn.btn-cu-bg-black {
+  background: var(--cua-black);
+  border: 2px solid var(--cua-black);
+  color: var(--cua-white);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-black:hover {
+  color: var(--cua-black) !important
+}
+
+.card-footer .btn.btn-cu-bg-black::before {
+  background: rgba(255, 255, 255, 1);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-black {
+  background: inherit;
+  border: 2px solid var(--cua-black);
+  color: var(--cua-black);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.outline-btn-cu-bg-black::before {
+  background: rgba(0, 0, 0, 1);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-black:hover::before,
+.card-footer .btn.btn-cu-bg-black:hover::before {
+  width: 100%
+}
+
+.card-footer .btn.outline-btn-cu-bg-black:hover,
+.card-footer .btn.btn-cu-bg-black:hover {
+  color: var(--cua-white);
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-white {
+  background: var(--cua-white);
+  border: 2px solid var(--cua-white);
+  color: var(--cua-black);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-white:hover {
+  color: var(--cua-white) !important
+}
+
+.card-footer .btn.btn-cu-bg-white::before {
+  background: var(--cua-black);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-white {
+  background: inherit;
+  border: 2px solid var(--cua-white);
+  color: var(--cua-white);
+  font-size: .9rem;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1;
+  line-height: 1.3
+}
+
+.card-footer .btn.outline-btn-cu-bg-white::before {
+  background: var(--cua-white);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-white:hover::before,
+.card-footer .btn.btn-cu-bg-white:hover::before {
+  width: 100%
+}
+
+.card-footer .btn.outline-btn-cu-bg-white:hover {
+  color: var(--cua-black);
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-white:hover {
+  color: var(--cua-white);
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-light-grey {
+  background: var(--cua-light-grey);
+  border: 2px solid var(--cua-light-grey);
+  color: var(--cua-black);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-light-grey:hover {
+  color: var(--cua-light-grey) !important
+}
+
+.card-footer .btn.btn-cu-bg-light-grey::before {
+  background: var(--cua-black);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-light-grey {
+  background: inherit;
+  border: 2px solid var(--cua-light-grey);
+  color: var(--cua-light-grey);
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1
+}
+
+.card-footer .btn.outline-btn-cu-bg-light-grey::before {
+  background: var(--cua-light-grey);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+  z-index: -1
+}
+
+.card-footer .btn.outline-btn-cu-bg-light-grey:hover::before,
+.card-footer .btn.btn-cu-bg-light-grey:hover::before {
+  width: 100%
+}
+
+.card-footer .btn.outline-btn-cu-bg-light-grey:hover {
+  color: var(--cua-black);
+  z-index: 1
+}
+
+.card-footer .btn.btn-cu-bg-light-grey:hover {
+  color: var(--cua-light-grey);
+  z-index: 1
+}
+
+.card-link.btn.nobtn-cu-bg-gold {
+  background: transparent;
+  border-color: transparent;
+  color: var(--cua-gold)
+}
+
+a.align-self-end.card-link.btn.nobtn-cu-bg-gold.text-decoration-none:hover {
+  text-decoration: underline !important
+}
+
+.card .text-cu-bg-gold-hover > * {
+  color: var(--cua-black)
+}
+
+.cu-bg-gold-hover, .card.cu-bg-gold-hover {
+  background: var(--cua-gold-hover)
+}
+
+.cu-bd-gold-hover, .card.cu-bd-gold-hover {
+  border: 2px solid var(--cua-gold-hover)
+}
+
+.cu-bg-black .card-footer .btn.outline-btn-cu-bg-gold-hover {
+  border: 2px solid var(--cua-gold-hover);
+  color: var(--cua-gold-hover)
+}
+
+.card .text-cu-bg-black > * {
+  color: var(--cua-white)
+}
+
+.cu-bg-black, .card.cu-bg-black {
+  background: var(--cua-black)
+}
+
+.cu-bg-black-trans {
+  background: rgba(0, 0, 0, 0.8)
+}
+
+.cu-bd-black, .card.cu-bd-black {
+  border: 2px solid var(--cua-black)
+}
+
+.align-self-end.card-link.btn.nobtn-cu-bg-black.text-decoration-none:hover {
+  text-decoration: underline !important
+}
+
+.card .text-cu-bg-white > * {
+  color: var(--cua-black)
+}
+
+.cu-bg-white, .card.cu-bg-white {
+  background: var(--cua-white)
+}
+
+.cu-bd-white, .card.cu-bd-white {
+  border: 2px solid var(--cua-white)
+}
+
+.align-self-end.card-link.btn.nobtn-cu-bg-white.text-decoration-none {
+  color: var(--cua-white);
+  background: transparent
+}
+
+.align-self-end.card-link.btn.nobtn-cu-bg-white.text-decoration-none:hover {
+  text-decoration: underline !important
+}
+
+.card .text-cu-bg-light-grey > * {
+  color: var(--cua-black)
+}
+
+.cu-bg-light-grey, .card.cu-bg-light-grey {
+  background: var(--cua-light-grey)
+}
+
+.cu-bd-light-grey, .card.cu-bd-light-grey {
+  border: 2px solid var(--cua-light-grey)
+}
+
+a.align-self-end.card-link.btn.nobtn-cu-bg-light-grey.text-decoration-none {
+  color: var(--cua-light-grey);
+  background: transparent
+}
+
+a.align-self-end.card-link.btn.nobtn-cu-bg-light-grey.text-decoration-none:hover {
+  text-decoration: underline !important
+}
+
+.card h6, .card .h6 {
+  font-weight: var(--font-weight-bold);
+  font-size: 0.95rem;
+  text-transform: none;
+  line-height: 1.2
+}
+
+.card-header a {
+  text-decoration: none
+}
+
+.img-hover-effect {
+  position: relative;
+  overflow: hidden;
+  width: inherit
+}
+
+.img-hover-effect img {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1)
+}
+
+.img-hover-effect:hover img {
+  transform: scale(0.95)
+}
+
+.figcaption {
+  color: initial
+}
+
+figure {
+  margin: 0
+}
+
+a figure {
+  text-decoration: none
+}
+
+.large img {
+  scale: 100%
+}
+
+.medium img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto
+}
+
+.small img {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto
+}
+
+.card-img.xsmall {
+  width: 25%
+}
+
+p.figcaption.card-header {
+  margin: 1rem 0 0
+}
+
+.display-4.cu-text-gold,
+.card-text.cu-text-gold,
+.cu-text-gold {
+  color: var(--cua-gold) !important
+}
+
+.display-4.cu-text-white,
+.card-text.cu-text-white,
+.cu-text-white {
+  background: transparent;
+  color: var(--cua-white) !important
+}
+
+.display-4.cu-black-black,
+.card-text.cu-black-black,
+.cu-text-black {
+  color: var(--cua-black) !important
+}
+
+.display-4.card-text.lead .d-flex.justify-content-center {
+  text-align: center !important
+}
+
+.card-link.btn.nobtn-cu-bg-light-grey {
+  color: var(--cua-light-grey)
+}
+
+.card-link.btn.nobtn-cu-bg-white {
+  color: var(--cua-white)
+}
+
+.shadow {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0
+}
+
+.shadow .card-body,
+.shadow .card-footer {
+  padding: 0 15px !important
+}
+
+.image-bundle {
+  padding: 0;
+  margin: 0
+}
+
+.margin_top {
+  margin-top: 3rem
+}
+
+.margin_bottom {
+  margin-bottom: 3rem
+}
+
+.margin_top_and_bottom {
+  margin-top: 3rem;
+  margin-bottom: 3rem
+}
+
+@media only screen and (max-width: 991px) {
+  .add-padding {
+    padding: 0.5rem !important
+  }
+}

@@ -1,0 +1,102 @@
+{#
+/**
+* @file
+* Template for the Alert component.
+*
+* Bootstrap Documentation
+* https://getbootstrap.com/docs/5.3
+*
+* Full List Utility Classes
+* https://github.com/twbs/bootstrap/blob/v5.3.0/dist/css/bootstrap.css#L5360
+*
+* Available fields located in:
+* - cua_theme.theme
+*/
+#}
+
+{# Import macros #}
+{% import '@cua_theme/component/macros/card_icon.html.twig' as iconMacros %}
+{% import '@cua_theme/component/macros/card_title.html.twig' as titleMacros %}
+{% import '@cua_theme/component/macros/card_body.html.twig' as bodyMacros %}
+{% import '@cua_theme/component/macros/card_footer.html.twig' as cardFooterMacros %}
+
+{# Attach the library #}
+{{ attach_library('cua_theme/alert') }}
+
+{# Define alert classes #}
+{% set alert_classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'alert alert-dismissible card rounded-0 h-100',
+    color_background ?: null,
+    color_border ?: null,
+    container_size ?: null,
+    id ? 'block--' ~ id|replace({"_": "-"})|clean_class : null
+] | merge(utility_classes ?: []) | filter(v => v) | join(' ') %}
+
+{# Generate unique ID #}
+{% set unique_id = 'block--node-alert--' ~ elements.content['#block_content'].id()|replace({"_": "-", ":": "--"}) %}
+
+{# Render content #}
+<div{{ attributes|without('id').setAttribute('id', unique_id).addClass(alert_classes) }}>
+    <div class="container">
+        <div class="row">
+
+            {# Close Button #}
+            <button type="button" class="btn-close" aria-label="Close"
+                    data-bs-dismiss="alert"></button>
+
+            {# Icon #}
+            {% if icon %}
+                <div class="col-sm-1 icon-container">
+                    {{ iconMacros.render_icon (
+                        icon,
+                        icon_size,
+                        icon_color,
+                        padding,
+                        position_container,
+                        text_alignment
+                    ) }}
+                </div>
+            {% endif %}
+
+            {# Content Area #}
+            <div class="col-sm-{{ content.field_icon is not empty ? '11' : '12' }} p-3">
+
+                {# Render the title #}
+                {{ titleMacros.render_title(
+                    label,
+                    title_prefix,
+                    title_suffix,
+                    center_content,
+                    text_alignment,
+                    text_color,
+                    padding,
+                    links
+                ) }}
+
+                {# Render the body #}
+                {{ bodyMacros.render_body(
+                    content,
+                    padding,
+                    text_color,
+                    text_alignment
+                ) }}
+
+                {# Render the footer #}
+                {{ cardFooterMacros.render_card_footer(
+                    links,
+                    container_size,
+                    color_background,
+                    position_container,
+                    text_alignment,
+                    padding,
+                    outline,
+                    button_color
+                ) }}
+
+            </div>
+
+        </div>
+    </div>
+</div>

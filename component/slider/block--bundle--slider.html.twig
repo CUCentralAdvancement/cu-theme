@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{# Carousel based on Bootstrap 5 #}
+{# Attach the library #}
+{{ attach_library('cua_theme/slider') }}
+
+{# Add Slider classes #}
+{% set slider_classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'container',
+    'slider',
+    'pb-5',
+] %}
+
+{# Add unique id to block #}
+{% set unique_id = 'block--node-' ~ '-slider' ~ '--' ~ elements.content['#block_content'].id()|replace({"_": "-", ":": "--"}) %}
+
+{# Content #}
+<div{{ attributes.addClass(slider_classes).setAttribute('id', unique_id) }}>
+
+    {# Include Title #}
+    {{ title_prefix ?? '' }}
+    <p class="text-align-center h2 title">{{ label }}</p>
+    {{ title_suffix ?? '' }}
+
+    <div id="carousel" class="carousel carousel-dark slide slide-numbers-{{ visibility_numbers }}"
+         data-bs-ride="carousel">
+
+        {# SLider Content  #}
+        <div class="carousel-inner text-align-center">
+            {{ content }}
+        </div>
+
+        {# Include Arrows Component #}
+        {% if content.field_visibility_arrows['#items'].0.value == 'visible' %}
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">{{ 'Previous'|t }}</span>
+            </button>
+
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">{{ 'Nex'|t }}t</span>
+            </button>
+        {% endif %}
+
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in xxx-page.html.twig.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<style>
+  /* Custom CSS to force container to bottom */
+  .sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+<!-- Header -->
+{% include '@cua_theme/templates/layout/header/header.html.twig' %}
+<!-- Page Content -->
+<div id="page-wrapper" class="mt-5">
+  <div id="page">
+    <div id="main-wrapper">
+      <div id="main" class="clearfix">
+        <main id="content" class="column" role="main">
+          <section class="section">
+            <a href="#main-content" id="main-content"></a>
+            {% if title %}
+              <h1 class="title" id="page-title">{{ title }}</h1>
+            {% endif %}
+            {{ page.content }}
+            {{ page.highlighted }}
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sticky bottom container -->
+<div class="sticky-bottom">
+    {# Footer #}
+    {% include '@cua_theme/templates/layout/footer/footer.html.twig' %}
+</div>

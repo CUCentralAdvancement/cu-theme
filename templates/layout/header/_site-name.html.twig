@@ -1,0 +1,21 @@
+{# Site name and breadcrumb #}
+<div class="container-fluid site-name-wrapper g-0">
+    <div class="container px-3 my-2">
+        <div class="row">
+            <div class="col-auto">
+                <h1 class="site-slogan mt-1">
+                    <a href="{{ url('<front>') }}" title="{{ site_name }}" class="site-link" rel="home">
+                        <span>{{ site_name }}</span>
+                    </a>
+                </h1>
+            </div>
+            {% if page.breadcrumb %}
+                {% block breadcrumb %}
+                    <div class="col d-none d-lg-block mt-3 mx-3">
+                        {{ page.breadcrumb }}
+                    </div>
+                {% endblock %}
+            {% endif %}
+        </div>
+    </div>
+</div>

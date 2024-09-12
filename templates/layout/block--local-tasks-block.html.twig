@@ -1,0 +1,23 @@
+{# extends @bootstrap_barrio/layout/block.html.twig
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+{% block content %}
+    {% if content %}
+        <div class="container text-center mt-2">
+            {#
+            <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+                <ul class="container mx-auto nav primary nav-pills">
+                    <li class="nav-item"><a href="/admin/content/block" class="nav-link nav-link--node-746-revisions">Custom Block Library</a></li>
+                    <li class="nav-item"><a href="/block/add?destination=/admin/content/block" class="nav-link nav-link--node-746-revisions">Custom Block Library</a></li>
+                </ul>
+            </nav>
+            #}
+            <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+                {{ content }}
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}

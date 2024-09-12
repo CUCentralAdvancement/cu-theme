@@ -1,0 +1,12 @@
+/* Spacer styling  */
+.user-administrator .spacer {
+    background: inherit
+}
+
+.user-administrator .small.text-align-center {
+    display: block
+}
+
+.small.text-align-center {
+    display: none
+}

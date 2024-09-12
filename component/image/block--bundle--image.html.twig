@@ -1,0 +1,68 @@
+{#
+/**
+* @file
+* Template for the Image Bundle component.
+*
+* Bootstrap Documentation
+* https://getbootstrap.com/docs/5.3
+*
+* Full List Utility Classes
+* https://github.com/twbs/bootstrap/blob/v5.3.0/dist/css/bootstrap.css#L5360
+*
+* Available fields located in:
+* - cua_theme.theme
+*/
+#}
+
+{# Import macros #}
+{% import '@cua_theme/component/macros/card_basic_title.html.twig' as titleMacros %}
+{% import '@cua_theme/component/macros/card_image.html.twig' as cardImageMacros %}
+{% import '@cua_theme/component/macros/card_body.html.twig' as bodyMacros %}
+
+{# Define classes #}
+{% set image_bundle_classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'image-bundle',
+    'card rounded-0',
+    color_background ?: null,
+    color_border ?: null,
+    container_size ?: null,
+    margins ?: null,
+    id ? 'block--' ~ id|replace({"_": "-"})|clean_class : null,
+] | merge(utility_classes ? utility_classes : []) | filter(v => v) | join(' ') %}
+
+{# Generate unique ID #}
+{% set unique_id = 'block--node--image-bundle--' ~ elements.content['#block_content'].id()|replace({"_": "-", ":": "--"}) %}
+
+{# Render content #}
+<div{{ attributes|without('id').setAttribute('id', unique_id).addClass(image_bundle_classes) }}>
+
+    {# Import title macro #}
+    {{ titleMacros.render_card_basic_title(
+        title_prefix,
+        label,
+        title_suffix)
+    }}
+
+    {# Render the card image #}
+    {{ cardImageMacros.render_card_image(
+        card_image,
+        position_container,
+        text_alignment,
+        text_color,
+        image_size,
+        visibility,
+        content,
+        links
+    ) }}
+
+    {# Render the body #}
+    {{ bodyMacros.render_body(
+        content,
+        padding,
+        text_color,
+        text_alignment
+    ) }}
+
+</div>

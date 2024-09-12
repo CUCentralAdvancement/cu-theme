@@ -1,0 +1,135 @@
+{#
+/**
+* @file
+* Template for the Video component.
+*
+* Bootstrap Documentation
+* https://getbootstrap.com/docs/5.3
+*
+* Full List Utility Classes
+* https://github.com/twbs/bootstrap/blob/v5.3.0/dist/css/bootstrap.css#L5360
+*
+* Available fields located in:
+* - cua_theme.theme
+*/
+#}
+
+{# Import macros #}
+{% import '@cua_theme/component/macros/card_title.html.twig' as titleMacros %}
+{% import '@cua_theme/component/macros/card_body.html.twig' as bodyMacros %}
+{% import '@cua_theme/component/macros/card_footer.html.twig' as cardFooterMacros %}
+
+{# Attach the library #}
+{{ attach_library('cua_theme/video') }}
+
+{# Define the main block classes #}
+{% set video_classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'video',
+    'card g-0',
+    'clearfix',
+    margins ?: null,
+    container_size ?: null,
+    id ? 'block--' ~ id|replace({"_": "-"})|clean_class : '',
+] %}
+
+{# Generate a unique ID for the block #}
+{% set unique_id = 'block--node--video--' ~ elements.content['#block_content'].id()|replace({"_": "-", ":": "--"}) %}
+
+{# Render the main content #}
+<div{{ attributes|without('id').setAttribute('id', unique_id).addClass(video_classes) }}>
+
+    {# Include Video component #}
+    {% include '@cua_theme/component/video/partials/_video--master.html.twig' %}
+
+    {# Desktop component #}
+    {% if label or body %}
+
+        <div class="video-desktop-copy d-none d-md-block g-0">
+            <div class="container-fluid mx-auto {% if parallax_video %}parallax-main-content{% else %}position-absolute{% endif %} d-flex {{ position_container ?? '' }}">
+                <div class="row">
+                    <div class="col {{ color_background  ?: '' }} px-5 py-4 m-5">
+
+                        {# Render the title #}
+                        {{ titleMacros.render_title(
+                            label,
+                            title_prefix,
+                            title_suffix,
+                            center_content,
+                            text_alignment,
+                            text_color,
+                            padding,
+                            links
+                        ) }}
+
+                        {# Render the body #}
+                        {{ bodyMacros.render_body(
+                            content,
+                            padding,
+                            text_color,
+                            text_alignment
+                        ) }}
+
+                        {# Render the footer #}
+                        {{ cardFooterMacros.render_card_footer(
+                            links,
+                            container_size,
+                            color_background,
+                            position_container,
+                            text_alignment,
+                            padding,
+                            outline,
+                            button_color
+                        ) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Video -- Mobile #}
+        <div class="video-mobile-copy d-md-none g-0 {% if parallax_video %}parallax-main-content{% endif %}">
+            <div class="container mt-0 mt-md-5">
+                <div class="row">
+                    <div class="col {{ color_background  ?: '' }} p-3 my-5">
+
+                        {# Render the title #}
+                        {{ titleMacros.render_title(
+                            label,
+                            title_prefix,
+                            title_suffix,
+                            center_content,
+                            text_alignment,
+                            text_color,
+                            padding,
+                            links
+                        ) }}
+
+                        {# Render the body #}
+                        {{ bodyMacros.render_body(
+                            content,
+                            padding,
+                            text_color,
+                            text_alignment
+                        ) }}
+
+                        {# Render the footer #}
+                        {{ cardFooterMacros.render_card_footer(
+                            links,
+                            container_size,
+                            color_background,
+                            position_container,
+                            text_alignment,
+                            padding,
+                            outline,
+                            button_color
+                        ) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+</div>
