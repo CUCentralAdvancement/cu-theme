@@ -1,0 +1,34 @@
+<div class="accordion" id="accordionExample">
+    {% for item in items %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ loop.index }}">
+                <button class="accordion-button {% if not loop.first %}collapsed{% endif %}"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{ loop.index }}"
+                        aria-expanded="{{ loop.first ? 'true' : 'false' }}"
+                        aria-controls="collapse{{ loop.index }}">
+                    {# Render the paragraph's title field #}
+                    {% if item.content['#paragraph'].field_title %}
+                        <p class="h5">{{ item.content['#paragraph'].field_title.value }}</p>
+                    {% else %}
+                        No title available
+                    {% endif %}
+                </button>
+            </h2>
+            <div id="collapse{{ loop.index }}"
+                 class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+                 aria-labelledby="heading{{ loop.index }}"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {# Render the paragraph's body field with HTML #}
+                    {% if item.content['#paragraph'].field_body %}
+                        {{ item.content['#paragraph'].field_body.processed|raw }}
+                    {% else %}
+                        No body available
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
