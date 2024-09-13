@@ -963,6 +963,10 @@ a.flag-link .flag.cu-bg-light-grey {
     padding-top: 2rem
 }
 
+.block-system-breadcrumb-block {
+    float: right;
+}
+
 @media only screen and (max-width: 991px) {
     .block-content-alert {
         justify-content: flex-start !important
