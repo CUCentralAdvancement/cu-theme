@@ -967,6 +967,11 @@ a.flag-link .flag.cu-bg-light-grey {
     float: right;
 }
 
+a.simplesamlphp-auth-login-link {
+    top: 237px;
+    right: 150px;
+}
+
 @media only screen and (max-width: 991px) {
     .block-content-alert {
         justify-content: flex-start !important
