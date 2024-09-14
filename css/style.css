@@ -202,19 +202,18 @@ div#block-cua-theme-page-title {
     display: none !important
 }
 
-/* square wrapper on title */
 .base-heading-square__accent {
     border-width: 3px;
     border-style: solid;
     border-color: var(--cua-gold);
     position: absolute;
     pointer-events: none;
-    top: 0;
-    left: -8px;
+    top: 213px;
+    left: 193px;
     display: block;
     width: 52px;
     height: 52px;
-    z-index: -100
+    z-index: -100;
 }
 
 /* CK editor title */
@@ -980,9 +979,7 @@ a.simplesamlphp-auth-login-link {
     .icon-container {
         padding: 0 0 0 1rem
     }
-}
 
-@media only screen and (max-width: 991px) {
     .parallax {
         background-attachment: scroll;
         min-height: auto
