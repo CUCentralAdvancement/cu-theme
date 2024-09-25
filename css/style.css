@@ -1099,3 +1099,46 @@ section.row.region.region-featured-top {
     }
 }
 
+/* Superfish Main Menu */
+.sf-depth-1 {
+    color: var(--cua-white) !important;
+}
+
+.sf-depth-1:hover,.sf-depth-1:hover, .sf-depth-1:hover   {
+    color: var(--cua-gold) !important;
+}
+
+a.sf-depth-2.menuparent.sf-with-ul,
+a.sf-depth-3.menuparent.sf-with-ul,
+a.is-active.sf-depth-3,
+a.sf-depth-3 {
+    background: var(--cua-white) !important;
+    color: var(--cua-black) !important;
+}
+
+ul.sf-menu a,
+ul.sf-menu span.nolink {
+    font-size: var(--font-xsmall) !important;
+    text-decoration: none !important
+}
+
+/*
+ul.sf-menu .sf-sub-indicator {
+  right: inherit;
+  top: 45%;
+}
+
+ul.sf-menu .sf-sub-indicator::after {
+  content: "\f078";
+  font-family: var(--font-awesome);
+  left: 1px;
+  top: 0;
+}
+
+#superfish-main a.sf-depth-1:hover::after {
+  color: var(--cua-white) !important;
+}
+
+ul.sf-menu .sf-with-ul {
+  padding-right: 0;
+}
