@@ -127,7 +127,7 @@ nav#navbar-main > li.first a:before {
 }
 
 button.search-icon {
-    background: var(--cua-gray-200);
+    background: var(--cua-black-pure);
     box-shadow: none;
     line-height: 0;
     margin: 0;
@@ -136,14 +136,18 @@ button.search-icon {
 
 button.search-icon {
     border-radius: 50%;
-    background: var(--cua-gray-200);
+    background: var(--cua-black-pure);
     box-shadow: 0 0 1px 0 rgb(0 0 0 / 50%);
     margin: 0 3px;
-    padding: 0.6rem
+    padding: 0.6rem;
 }
 
 button.search-icon:hover {
-    background: var(--cua-gray-400)
+    background:var(--cua-gold);
+}
+
+.search-icon svg {
+    transform: scale(1.2); /* Increase to make the icon bigger and thus appear thicker */
 }
 
 header .search-block-form {
@@ -682,6 +686,48 @@ div#block-cua-theme-breadcrumbs {
 /* Search */
 .node_search-results .list-group-item {
     border: none !important
+}
+
+/* Superfish Main Menu */
+.sf-depth-1 {
+    color: var(--cua-black) !important;
+}
+
+.sf-depth-1:hover,.sf-depth-1:hover, .sf-depth-1:hover   {
+    color: var(--cua-gold) !important;
+}
+
+ul.sf-menu a,
+ul.sf-menu span.nolink {
+    font-size: var(--font-small) !important;
+    font-weight: var(--font-weight-medium) !important;
+    text-decoration: none !important
+}
+
+.sf-depth-2,
+.sf-depth-3,
+.sf-depth-4,
+.sf-depth-5 {
+    background: var(--cua-white) !important;
+    color: var(--cua-black) !important;
+}
+
+.sf-depth-2:hover,
+.sf-depth-3:hover,
+.sf-depth-4:hover,
+.sf-depth-5:hover {
+    color: var(--cua-gold) !important;
+}
+
+/* Apply only to top-level menu items */
+ul.sf-menu > li > a:first-child,
+ul.sf-menu > li > span.nolink:first-child {
+    padding: 1em 1.5em 1em 0;
+}
+
+/* Apply the hand pointer on hover for nolink elements */
+ul.sf-menu span.nolink {
+    cursor: pointer;
 }
 
 /* Responsive */
