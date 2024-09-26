@@ -1,7 +1,7 @@
 /* Header styling */
 
 header#header {
-    background: var(--cua-white) !important
+    background: var(--cua-black-pure) !important
 }
 
 /* Site Slogan */
@@ -55,10 +55,9 @@ h1.site-link {
 
 /* Navigation */
 nav#navbar-main {
-    background: var(--uci-gray);
-    color: var(--bg-light)
+    background: var(--cua-white);
+    color: var(--cua-black);
 }
-
 nav#navbar-main.sticky {
     background: rgba(0, 0, 0, 0.85)
 }
@@ -214,7 +213,7 @@ header .search-block-form {
 }
 
 p.search-button {
-    margin: .48rem 0 0;
+    margin: 1.25rem 0 0;
     padding: 0 1rem 0
 }
 

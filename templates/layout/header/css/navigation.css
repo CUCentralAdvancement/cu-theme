@@ -423,3 +423,45 @@ a.nav-link.active.is-active {
 aside .nav {
   border-right: 1px solid var(--cua-gray-500) !important
 }
+
+/* Superfish Main Menu */
+.sf-depth-1 {
+  color: var(--cua-black) !important;
+}
+
+.sf-depth-1:hover,.sf-depth-1:hover, .sf-depth-1:hover   {
+  color: var(--cua-gold) !important;
+}
+
+ul.sf-menu a,
+ul.sf-menu span.nolink {
+  font-size: var(--font-small) !important;
+  font-weight: var(--font-weight-medium) !important;
+  text-decoration: none !important
+}
+
+.sf-depth-2,
+.sf-depth-3,
+.sf-depth-4,
+.sf-depth-5 {
+  background: var(--cua-white) !important;
+  color: var(--cua-black) !important;
+}
+
+.sf-depth-2:hover,
+.sf-depth-3:hover,
+.sf-depth-4:hover,
+.sf-depth-5:hover {
+  color: var(--cua-gold) !important;
+}
+
+/* Apply only to top-level menu items */
+ul.sf-menu > li > a:first-child,
+ul.sf-menu > li > span.nolink:first-child {
+  padding: 1em 1.5em 1em 0;
+}
+
+/* Apply the hand pointer on hover for nolink elements */
+ul.sf-menu span.nolink {
+  cursor: pointer;
+}
