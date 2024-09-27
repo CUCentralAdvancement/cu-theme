@@ -1,23 +1,32 @@
-<div class="accordion" id="accordionCU">
+{# Accordion Fields #}
+
+{# Generate a random base ID for the accordion block #}
+{% set base_id = 'accordionCU-' ~ random(1000, 9999) %}
+
+<div class="accordion" id="{{ base_id }}">
     {% for item in items %}
+        {# Generate unique IDs for each accordion item based on base_id and loop.index #}
+        {% set heading_id = 'heading-' ~ base_id ~ '-' ~ loop.index %}
+        {% set collapse_id = 'collapse-' ~ base_id ~ '-' ~ loop.index %}
+
         <div class="accordion-item">
-            <h2 class="accordion-header" id="heading{{ loop.index }}">
+            <h2 class="accordion-header" id="{{ heading_id }}">
                 <button class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapse{{ loop.index }}"
+                        data-bs-target="#{{ collapse_id }}"
                         aria-expanded="false"
-                        aria-controls="collapse{{ loop.index }}">
+                        aria-controls="{{ collapse_id }}">
                     {# Render the paragraph's title field #}
                     {% if item.content['#paragraph'].field_title %}
                         <p class="h5">{{ item.content['#paragraph'].field_title.value }}</p>
                     {% endif %}
                 </button>
             </h2>
-            <div id="collapse{{ loop.index }}"
+            <div id="{{ collapse_id }}"
                  class="accordion-collapse collapse"
-                 aria-labelledby="heading{{ loop.index }}"
-                 data-bs-parent="#accordionCU">
+                 aria-labelledby="{{ heading_id }}"
+                 data-bs-parent="#{{ base_id }}">
                 <div class="accordion-body">
                     {# Render the paragraph's body field with HTML #}
                     {% if item.content['#paragraph'].field_body %}
