@@ -7,8 +7,6 @@ global-styling:
         weight: -11
       templates/layout/header/css/header.css:
         weight: -11
-      templates/layout/header/css/navigation.css:
-        weight: -11
       css/style.css:
         weight: -11
       component/macros/css/card.css:

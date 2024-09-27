@@ -446,8 +446,8 @@ header .sticky .navbar-nav > .nav-item:first-child > .nav-link::before {
 
 .header .sticky .search-icon {
     position: absolute;
-    top: 0.55rem;
-    right: 15px
+    top: -.25rem;
+    right: 15px;
 }
 
 .header .sticky button.search-icon {
