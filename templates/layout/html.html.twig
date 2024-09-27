@@ -23,20 +23,6 @@
  *
  * @see template_preprocess_html()
 #}
-
-<!DOCTYPE html>
-<html{{ html_attributes }}>
-<head>
-
-  <head-placeholder token="{{ placeholder_token|raw }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    {{ attach_library('cu_theme/barba') }}
-
-    <css-placeholder token="{{ placeholder_token|raw }}">
-      <js-placeholder token="{{ placeholder_token|raw }}">
-
-</head>
-
 {# Set body clesses #}
 {%
   set body_classes = [
@@ -48,13 +34,32 @@
 ]
 %}
 
-<body{{ attributes.addClass(body_classes) }}>
-<a href="#main-content" class="visually-hidden-focusable">
-  {{ 'Skip to main content'|t }}
-</a>
-{{ page_top }}
-{{ page }}
-{{ page_bottom }}
-<js-bottom-placeholder token="{{ placeholder_token|raw }}">
-</body>
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+
+    <head-placeholder token="{{ placeholder_token|raw }}">
+
+      <title>{{ head_title|safe_join(' | ') }}</title>
+
+      {{ attach_library('cu_theme/barba') }}
+
+      <css-placeholder token="{{ placeholder_token|raw }}">
+
+      <js-placeholder token="{{ placeholder_token|raw }}">
+
+  </head>
+
+  <body{{ attributes.addClass(body_classes) }}>
+
+    <a href="#main-content" class="visually-hidden-focusable">{{ 'Skip to main content'|t }}</a>
+
+      {{ page_top }}
+      {{ page }}
+      {{ page_bottom }}
+
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+
+  </body>
+
 </html>
