@@ -465,3 +465,9 @@ ul.sf-menu > li > span.nolink:first-child {
 ul.sf-menu span.nolink {
   cursor: pointer;
 }
+
+l.sf-menu a, ul.sf-menu span.nolink {
+  display: block;
+  padding: .5rem 1rem;
+  position: relative;
+}
