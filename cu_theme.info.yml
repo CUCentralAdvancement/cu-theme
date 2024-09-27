@@ -38,6 +38,7 @@ regions:
 
 libraries:
   - cu_theme/global-styling
+  - cua_theme/fontawesome
   - cu_theme/alert
   - cu_theme/banner
   - cu_theme/call-to-action
