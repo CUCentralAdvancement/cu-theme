@@ -576,31 +576,6 @@ nav.tabs {
     justify-content: center !important
 }
 
-.nav.primary.nav-pills li a::before {
-    display: inline-block;
-    font-family: var(--font-awesome);
-    font-weight: var(--font-weight-xbold);margin-right: 10px
-}
-
-.nav.primary.nav-pills li:first-child a::before {
-    content: "\f06e";}
-
-.nav.primary.nav-pills li:nth-child(2) a::before {
-    content: "\f044";
-}
-
-.nav.primary.nav-pills li:nth-child(3) a::before {
-    content: "\f014";
-}
-
-.nav.primary.nav-pills li:nth-child(4) a::before {
-    content: "\f013";
-}
-
-.nav.primary.nav-pills li:nth-child(5) a::before {
-    content: "\f1da";
-}
-
 ol.list-group.node_search-results a {
     font-size: 1.5rem !important
 }
