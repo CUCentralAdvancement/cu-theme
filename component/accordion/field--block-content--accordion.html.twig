@@ -19,7 +19,7 @@
                         aria-controls="{{ collapse_id }}">
                     {# Render the paragraph's title field #}
                     {% if item.content['#paragraph'].field_title %}
-                        <p class="h5">{{ item.content['#paragraph'].field_title.value }}</p>
+                        <p class="h4">{{ item.content['#paragraph'].field_title.value }}</p>
                     {% endif %}
                 </button>
             </h2>
@@ -27,12 +27,23 @@
                  class="accordion-collapse collapse"
                  aria-labelledby="{{ heading_id }}"
                  data-bs-parent="#{{ base_id }}">
+
+                {# Render the paragraph's body field #}
                 <div class="accordion-body">
-                    {# Render the paragraph's body field with HTML #}
                     {% if item.content['#paragraph'].field_body %}
                         {{ item.content['#paragraph'].field_body.processed|raw }}
                     {% endif %}
                 </div>
+
+                {# Render the paragraph's link field #}
+                <div class="accordion-link m-4">
+                    {% if item.content['#paragraph'].field_link and item.content['#paragraph'].field_link.0 %}
+                        <a class="btn btn-primary" href="{{ item.content['#paragraph'].field_link.0.uri }}" target="_blank">
+                            {{ item.content['#paragraph'].field_link.0.title }}
+                        </a>
+                    {% endif %}
+                </div>
+
             </div>
         </div>
     {% endfor %}
