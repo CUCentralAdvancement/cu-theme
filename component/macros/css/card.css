@@ -652,8 +652,14 @@ p.figcaption.card-header {
   margin-bottom: 3rem
 }
 
+a.card-link.btn.nobtn-cu-bg-black.text-decoration-none {
+  color: var(--cua-blue);
+  font-size: 110%
+}
+
 @media only screen and (max-width: 991px) {
   .add-padding {
-    padding: 0.5rem !important
+    padding: 0.5rem !important;
+    margin: 0 2rem !important;
   }
 }

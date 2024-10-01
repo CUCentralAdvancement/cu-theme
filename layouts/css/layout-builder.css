@@ -303,7 +303,7 @@ form#node-page-layout-builder-form #edit-actions {
 }
 
 .block.block-layout-builder.block-inline-blockbasic {
-    margin: 0 0 2rem;
+    margin: 1rem;
 }
 
 #layout-builder-modal form {
