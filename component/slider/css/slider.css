@@ -21,7 +21,7 @@
   display: none
 }
 
-/* Slider */
+/* Slider colors */
 
 .slider blockquote {
   border-left: 0 solid var(--cua-gold) !important;
@@ -44,6 +44,8 @@
   display: none
 }
 
+/* Mobile */
+
 @media only screen and (max-width: 991px) {
 
   .slider blockquote p {
@@ -60,4 +62,5 @@
   .slider blockquote::before {
     left: -20px !important;
   }
+  
 }
